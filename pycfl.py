@@ -21,4 +21,4 @@ def pycfl(s):
         s = s.replace('+!![]', '10')
         # print(s)  # DEBUG
         result += str(sum([int(i) for i in s.split('+')]))
-    return result
+    return int(result)

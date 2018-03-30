@@ -1,7 +1,7 @@
 import re
 import requests
 import time
-from pyclf import _cf
+from pycfl import pycfl as _cf
 
 r = requests.Session()
 
@@ -26,6 +26,6 @@ if 'Checking your browser before accessing' in rc:
     jschl_pass = re.search('name="pass" value="(.+?)"', rc).group(1)
     params = {'jschl_vc': jschl_vc,
               'pass': jschl_pass,
-              'jschl-answer': ans}
+              'jschl_answer': ans}
     rc = r.get('https://nordvpn.com/cdn-cgi/l/chk_jschl', params=params).text
     open('gdown.log', 'w').write(rc)
